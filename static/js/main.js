@@ -158,30 +158,6 @@
     paintReel();
     resetReelTimer();
 
-    const counters = [...document.querySelectorAll(".impact-stat__value")];
-    function animateCounter(element) {
-        const target = Number(element.dataset.count);
-        const suffix = element.dataset.suffix || "";
-        if (reducedMotion.matches) { element.textContent = `${target}${suffix}`; return; }
-        const start = performance.now();
-        const duration = 1200;
-        function tick(now) {
-            const t = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - t, 3);
-            element.textContent = `${Math.round(target * eased)}${suffix}`;
-            if (t < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-    }
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.4 });
-    counters.forEach((counter) => counterObserver.observe(counter));
-
     const copyEmail = document.getElementById("copyEmail");
     const copyStatus = document.getElementById("copyStatus");
     copyEmail.addEventListener("click", async (event) => {

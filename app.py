@@ -15,15 +15,17 @@ DATA = {
     "medium": "https://medium.com/@vikaskumar.ran",
     "medium_feed": "https://medium.com/feed/@vikaskumar.ran",
     "hero_summary": (
-        "From Spark and streaming systems to prompt engineering and LoRA fine-tuning — "
-        "I take data and AI ideas all the way to production."
+        "AI and Data Engineer with 9 years of experience building scalable data platforms, "
+        "robust pipelines, and production-ready AI solutions. Skilled in Python, Spark, SQL, "
+        "cloud technologies, data modeling, and pipeline optimization, with hands-on experience "
+        "in LLM fine-tuning, embeddings, and GPU-based inference."
     ),
-    "exploring": ["embedding models", "LLM fine-tuning", "AI-driven data quality"],
-    "phrases": ["data pipelines.", "LLM workflows.", "reliable platforms."],
-    "stats": [
-        {"value": 85, "suffix": "%", "label": "LLM classification accuracy"},
-        {"value": 5, "suffix": "", "label": "Platforms delivered"},
-        {"value": 4, "suffix": "", "label": "Articles published"},
+    "phrases": [
+        "data pipelines.",
+        "LLM workflows.",
+        "scalable pipelines.",
+        "AI-powered solutions.",
+        "robust platforms.",
     ],
     "skills_intro": "Data engineering foundations paired with hands-on applied AI and cloud delivery.",
     "skills": [
@@ -51,15 +53,14 @@ DATA = {
     },
     "previous_projects": [
         {
-            "title": "DQ · Automated Rule Suggestions",
-            "summary": "Improved LLM-generated data-quality rules and built an evaluation framework to measure their quality consistently.",
-            "meta": "Prompt engineering · Evaluation framework",
+            "title": "Dedup · Data Processing Platform",
+            "summary": "Built scalable data ingestion and processing workflows and prepared search indexes for downstream use.",
+            "meta": "Data engineering · Platform enablement",
             "highlights": [
-                "Rebuilt the ARS system prompt with confidence tiers, dimension coverage, and rule-quality guidelines.",
-                "Designed practical workarounds for LLM limitations and unreliable output patterns.",
-                "Developed an evaluation framework that scores generated rules across multiple metrics.",
+                "Developed Spark jobs for data ingestion and transformation.",
+                "Created jobs to load Elasticsearch indexes and established the project's CI/CD pipelines.",
             ],
-            "tags": ["LLMs", "Prompt Engineering", "Evaluation", "Data Quality"],
+            "tags": ["Spark", "Elasticsearch", "Data Ingestion", "CI/CD"],
         },
         {
             "title": "IRR · Privacy Rights Platform",
@@ -73,14 +74,15 @@ DATA = {
             "tags": ["Airflow", "Kafka", "CI/CD", "APIs", "Privacy Engineering"],
         },
         {
-            "title": "Dedup · Data Processing Platform",
-            "summary": "Built scalable data ingestion and processing workflows and prepared search indexes for downstream use.",
-            "meta": "Data engineering · Platform enablement",
+            "title": "DQ · Automated Rule Suggestions",
+            "summary": "Improved LLM-generated data-quality rules and built an evaluation framework to measure their quality consistently.",
+            "meta": "Prompt engineering · Evaluation framework",
             "highlights": [
-                "Developed Spark jobs for data ingestion and transformation.",
-                "Created jobs to load Elasticsearch indexes and established the project's CI/CD pipelines.",
+                "Rebuilt the ARS system prompt with confidence tiers, dimension coverage, and rule-quality guidelines.",
+                "Designed practical workarounds for LLM limitations and unreliable output patterns.",
+                "Developed an evaluation framework that scores generated rules across multiple metrics.",
             ],
-            "tags": ["Spark", "Elasticsearch", "Data Ingestion", "CI/CD"],
+            "tags": ["LLMs", "Prompt Engineering", "Evaluation", "Data Quality"],
         },
         {
             "title": "BigID · Asset Onboarding & Automation",
