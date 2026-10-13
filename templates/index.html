@@ -34,6 +34,7 @@
                     <a href="#projects">Projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#articles">Articles</a>
+                    <a href="#interests">Interests</a>
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="header-actions">
@@ -52,6 +53,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#articles">Articles</a>
+                <a href="#interests">Interests</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
@@ -205,10 +207,27 @@
                 </div>
             </section>
 
+            <section class="portfolio-section" id="interests" aria-labelledby="interests-heading">
+                <div class="section-content reveal">
+                    <div class="section-heading">
+                        <p class="eyebrow">05 · INTERESTS</p>
+                        <h2 id="interests-heading">Areas I’m interested in</h2>
+                    </div>
+                    <ul class="interest-grid">
+                        {% for interest in interests %}
+                        <li class="interest-item reveal" style="--reveal-delay: {{ loop.index0 * 70 }}ms">
+                            <span class="interest-item__icon" aria-hidden="true">{{ interest.icon }}</span>
+                            <span class="interest-item__body"><span class="interest-item__title">{{ interest.title }}</span><span class="interest-item__summary">{{ interest.summary }}</span></span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+
             <section class="portfolio-section portfolio-section--contact" id="contact" aria-labelledby="contact-heading">
                 <div class="section-content reveal">
                     <div class="section-heading">
-                        <p class="eyebrow">05 · CONTACT</p>
+                        <p class="eyebrow">06 · CONTACT</p>
                         <h2 id="contact-heading">Let’s connect</h2>
                         <p class="section-intro">Interested in data engineering, applied AI, or platform architecture? Say hi.</p>
                     </div>

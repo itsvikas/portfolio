@@ -145,6 +145,14 @@ DATA = {
         {"name": "Apache Spark Programming with Databricks", "issuer": "Databricks", "date": "Jun 2021", "id": ""},
     ],
     "articles_intro": "Practical notes on LLM fine-tuning, data engineering, SQL, and modern data platforms.",
+    "interests": [
+        {"icon": "⌘", "title": "Distributed systems at scale", "summary": "Systems that spread work across many machines and keep up as data and traffic grow."},
+        {"icon": "⌕", "title": "Embeddings & vector databases", "summary": "Turning data into embeddings and storing them for semantic search and retrieval."},
+        {"icon": "ϟ", "title": "Performance & cost optimization", "summary": "Faster, cheaper Spark jobs, and lower cost and latency for LLMs in production."},
+        {"icon": "✧", "title": "LLM fine-tuning & deployment", "summary": "LoRA fine-tuning on LLaMA and Gemma, then serving models for fast, reliable inference."},
+        {"icon": "↗", "title": "Big data processing", "summary": "Batch and streaming pipelines in Spark, SQL, and Kafka over huge datasets."},
+        {"icon": "▤", "title": "AI agents", "summary": "LLM workflows that take multi-step actions on real data."},
+    ],
     "articles": [
         {"title": "How to Fine-Tune an LLM", "summary": "A practical introduction to adapting large language models for task-specific needs.", "url": "https://medium.com/@vikaskumar.ran/how-to-fine-tune-an-llm-cf251ca41ad2"},
         {"title": "Start Your Data Engineering Hands-On Experience with These Free Resources", "summary": "A curated path for building practical data engineering skills with accessible resources.", "url": "https://medium.com/@vikaskumar.ran/start-your-data-engineering-hands-on-experience-with-these-free-resources-which-are-more-than-4f743e611b6f"},
