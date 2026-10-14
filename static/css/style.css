@@ -207,7 +207,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 .article-feed-note { min-height: 1.4em; margin: 16px 0 0; color: var(--subtle); font-size: .78rem; }
 
 .portfolio-section--contact { padding-bottom: clamp(72px, 10vw, 120px); }
-.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.contact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .contact-tile { position: relative; display: flex; min-width: 0; min-height: 150px; align-items: flex-start; gap: 16px; padding: 22px 18px; border: 1px solid var(--hairline); border-radius: var(--radius); background: var(--tile-bg); text-decoration: none; transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
 .contact-tile:hover, .contact-tile:focus-visible { border-color: var(--accent-border); box-shadow: 0 16px 40px -20px var(--accent-shadow); transform: translateY(-3px); }
 .contact-tile--email { padding-right: 50px; }
