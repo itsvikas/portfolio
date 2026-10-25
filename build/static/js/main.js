@@ -184,104 +184,14 @@
     });
 
     const articleGrid = document.getElementById("articleGrid");
-    const articleFeedNote = document.getElementById("articleFeedNote");
-    const feedUrl = window.__MEDIUM_FEED;
-    function safeWebUrl(value) {
-        try {
-            const url = new URL(value);
-            return url.protocol === "https:" || url.protocol === "http:" ? url.href : "";
-        } catch (error) {
-            return "";
-        }
-    }
-    function makeArticleCard(article) {
-        const href = safeWebUrl(article.link);
-        if (!href) return null;
-
-        const card = document.createElement("a");
-        card.className = "article-card";
-        card.href = href;
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-
-        const media = document.createElement("span");
-        media.className = "article-card__media";
-        media.setAttribute("aria-hidden", "true");
-        let thumbnailSource = article.thumbnail || article.image;
-        if (!thumbnailSource && article.description) {
-            const descriptionDocument = new DOMParser().parseFromString(article.description, "text/html");
-            thumbnailSource = descriptionDocument.querySelector("img")?.getAttribute("src");
-        }
-        const thumbnail = safeWebUrl(thumbnailSource);
-        if (thumbnail) {
-            const image = document.createElement("img");
-            image.src = thumbnail;
-            image.alt = "";
-            image.loading = "lazy";
-            image.referrerPolicy = "no-referrer";
-            image.addEventListener("error", () => {
-                image.remove();
-                media.classList.add("article-card__media--fallback");
-                media.textContent = "Medium";
-            }, { once: true });
-            media.append(image);
-        } else {
-            media.classList.add("article-card__media--fallback");
-            media.textContent = "Medium";
-        }
-
-        const body = document.createElement("span");
-        body.className = "article-card__body";
-        const date = document.createElement("span");
-        date.className = "article-card__date";
-        const parsedDate = article.pubDate ? new Date(article.pubDate) : null;
-        date.textContent = parsedDate && !Number.isNaN(parsedDate.valueOf())
-            ? parsedDate.toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric" })
-            : "Medium article";
-
-        const title = document.createElement("span");
-        title.className = "article-card__title";
-        title.textContent = article.title || "Untitled article";
-        const summary = document.createElement("span");
-        summary.className = "article-card__summary";
-        const parsed = new DOMParser().parseFromString(article.description || "", "text/html");
-        const excerpt = (parsed.body.textContent || "").trim();
-        summary.textContent = excerpt
-            ? `${excerpt.slice(0, 150).replace(/\s+\S*$/, "")}…`
-            : "Read this article on Medium.";
-        const read = document.createElement("span");
-        read.className = "article-card__read";
-        read.append(document.createTextNode("Read article "));
-        const arrow = document.createElement("span");
-        arrow.setAttribute("aria-hidden", "true");
-        arrow.textContent = "→";
-        read.append(arrow);
-        const newTab = document.createElement("span");
-        newTab.className = "visually-hidden";
-        newTab.textContent = " (opens in a new tab)";
-
-        body.append(date, title, summary, read);
-        card.append(media, body, newTab);
-        return card;
-    }
-    if (feedUrl && articleGrid) {
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
-        fetch(apiUrl)
-            .then((response) => {
-                if (!response.ok) throw new Error("Medium feed request failed");
-                return response.json();
-            })
-            .then((data) => {
-                if (data.status !== "ok" || !Array.isArray(data.items) || data.items.length === 0) {
-                    throw new Error("No Medium articles returned");
-                }
-                const cards = data.items.slice(0, 6).map(makeArticleCard).filter(Boolean);
-                if (!cards.length) throw new Error("No valid Medium article links");
-                articleGrid.replaceChildren(...cards);
-                articleFeedNote.textContent = "Recent articles from Medium.";
-            })
-            .catch(() => {
-                articleFeedNote.textContent = "Showing selected articles. Visit Medium for more writing.";
-            });
-    }
+    articleGrid?.addEventListener("error", (event) => {
+        const image = event.target;
+        if (!(image instanceof HTMLImageElement) || !image.classList.contains("article-card__image")) return;
+        const media = image.parentElement;
+        image.remove();
+        media.classList.add("article-card__media--fallback");
+        const label = document.createElement("span");
+        label.textContent = "Medium";
+        media.append(label);
+    }, true);
 })();

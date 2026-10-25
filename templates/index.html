@@ -197,13 +197,13 @@
                     <div class="article-grid" id="articleGrid" aria-live="polite">
                         {% for article in articles %}
                         <a class="article-card" href="{{ article.url }}" target="_blank" rel="noopener noreferrer" style="--reveal-delay: {{ loop.index0 * 80 }}ms">
-                            <span class="article-card__media article-card__media--fallback" aria-hidden="true"><span>Medium</span></span>
-                            <span class="article-card__body"><span class="article-card__date">Featured article</span><span class="article-card__title">{{ article.title }}</span><span class="article-card__summary">{{ article.summary }}</span><span class="article-card__read">Read article <span aria-hidden="true">→</span></span></span>
+                            <span class="article-card__media{% if not article.image %} article-card__media--fallback{% endif %}" aria-hidden="true">{% if article.image %}<img class="article-card__image" src="{{ article.image }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<span>Medium</span>{% endif %}</span>
+                            <span class="article-card__body"><span class="article-card__date">{{ article.date | default('Featured article') }}</span><span class="article-card__title">{{ article.title }}</span><span class="article-card__summary">{{ article.summary }}</span><span class="article-card__read">Read article <span aria-hidden="true">→</span></span></span>
                             <span class="visually-hidden"> (opens in a new tab)</span>
                         </a>
                         {% endfor %}
                     </div>
-                    <p class="article-feed-note" id="articleFeedNote">Showing recent writing from Medium.</p>
+                    <p class="article-feed-note" id="articleFeedNote">{{ articles_note | default('Selected articles from Medium.') }}</p>
                 </div>
             </section>
 
@@ -247,7 +247,6 @@
         <footer class="site-footer"><div class="site-footer__inner"><p>© 2026 Vikas.</p><p>Built thoughtfully, without unnecessary machinery.</p></div></footer>
         <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" hidden>↑</button>
     </div>
-    <script>window.__MEDIUM_FEED = {{ medium_feed | tojson }};</script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </body>
 </html>
