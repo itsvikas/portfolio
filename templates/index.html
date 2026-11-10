@@ -32,6 +32,7 @@
                 <nav class="desktop-nav" aria-label="Portfolio navigation">
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
+                    <a href="#personal-projects">Side Projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#articles">Articles</a>
                     <a href="#interests">Interests</a>
@@ -51,6 +52,7 @@
             <nav class="mobile-nav" id="mobileNav" aria-label="Mobile portfolio navigation" hidden>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#personal-projects">Side Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#articles">Articles</a>
                 <a href="#interests">Interests</a>
@@ -153,10 +155,58 @@
                 </div>
             </section>
 
+            <section class="portfolio-section" id="personal-projects" aria-labelledby="personal-projects-heading">
+                <div class="section-content reveal">
+                    <div class="section-heading">
+                        <p class="eyebrow">03 · SIDE PROJECTS</p>
+                        <h2 id="personal-projects-heading">Personal projects</h2>
+                        <p class="section-intro">{{ personal_projects_intro }}</p>
+                    </div>
+                    <div class="personal-project-grid">
+                        {% for project in personal_projects %}
+                        <article class="personal-project-card">
+                            <div class="personal-project-card__heading">
+                                <div><h3>{{ project.title }}</h3><span class="personal-project-card__kind">Personal app</span></div>
+                                <span class="tag tag--positive">{{ project.status }}</span>
+                            </div>
+                            <p class="personal-project-card__summary">{{ project.summary }}</p>
+                            <p class="personal-project-card__details">{{ project.details }}</p>
+                            <div class="personal-project-gallery-shell">
+                                <div class="personal-project-gallery" id="smartNotesGallery-{{ loop.index0 }}" role="region" aria-label="Smart Notes screenshots. Scroll horizontally to see all five." tabindex="0">
+                                    {% for screenshot in project.screenshots %}
+                                    <figure class="personal-project-shot">
+                                        <div class="personal-project-shot__device personal-project-shot__device--s25-ultra" aria-label="Samsung Galaxy S25 Ultra style frame">
+                                            <span class="personal-project-shot__side-key personal-project-shot__side-key--volume" aria-hidden="true"></span>
+                                            <span class="personal-project-shot__side-key personal-project-shot__side-key--power" aria-hidden="true"></span>
+                                            <img src="{{ url_for('static', filename=screenshot.file) }}" alt="{{ screenshot.alt }}" loading="lazy">
+                                        </div>
+                                        <figcaption>{{ screenshot.caption }}</figcaption>
+                                    </figure>
+                                    {% endfor %}
+                                </div>
+                                <div class="personal-project-gallery-toolbar">
+                                    <p class="personal-project-gallery-hint">Swipe, scroll, or use the arrows to browse all five screens.</p>
+                                    <div class="personal-project-gallery-controls" role="group" aria-label="Screenshot gallery controls">
+                                        <button class="personal-project-gallery-button" type="button" data-gallery-target="smartNotesGallery-{{ loop.index0 }}" data-gallery-direction="-1" aria-label="Previous screenshots">←</button>
+                                        <button class="personal-project-gallery-button" type="button" data-gallery-target="smartNotesGallery-{{ loop.index0 }}" data-gallery-direction="1" aria-label="Next screenshots">→</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="personal-project-card__features-heading">Key features</h4>
+                            <ul class="tag-list personal-project-card__features" aria-label="Smart Notes features">
+                                {% for feature in project.features %}<li class="tag">{{ feature }}</li>{% endfor %}
+                            </ul>
+                            <p class="personal-project-card__link-note">Live and deployed · Access is currently invite-only</p>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
             <section class="portfolio-section" id="experience" aria-labelledby="experience-heading">
                 <div class="section-content reveal">
                     <div class="section-heading">
-                        <p class="eyebrow">03 · EXPERIENCE</p>
+                        <p class="eyebrow">04 · EXPERIENCE</p>
                         <h2 id="experience-heading">Where I’ve been</h2>
                         <p class="section-intro">{{ experience_intro }}</p>
                     </div>
@@ -190,7 +240,7 @@
             <section class="portfolio-section" id="articles" aria-labelledby="articles-heading">
                 <div class="section-content reveal">
                     <div class="section-heading">
-                        <p class="eyebrow">04 · WRITING</p>
+                        <p class="eyebrow">05 · WRITING</p>
                         <h2 id="articles-heading">Articles on Medium</h2>
                         <p class="section-intro">{{ articles_intro }}</p>
                     </div>
@@ -210,7 +260,7 @@
             <section class="portfolio-section" id="interests" aria-labelledby="interests-heading">
                 <div class="section-content reveal">
                     <div class="section-heading">
-                        <p class="eyebrow">05 · INTERESTS</p>
+                        <p class="eyebrow">06 · INTERESTS</p>
                         <h2 id="interests-heading">Areas I’m interested in</h2>
                     </div>
                     <ul class="interest-grid">
@@ -227,7 +277,7 @@
             <section class="portfolio-section portfolio-section--contact" id="contact" aria-labelledby="contact-heading">
                 <div class="section-content reveal">
                     <div class="section-heading">
-                        <p class="eyebrow">06 · CONTACT</p>
+                        <p class="eyebrow">07 · CONTACT</p>
                         <h2 id="contact-heading">Let’s connect</h2>
                         <p class="section-intro">Interested in data engineering, applied AI, or platform architecture? Say hi.</p>
                     </div>

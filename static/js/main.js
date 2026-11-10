@@ -183,6 +183,21 @@
         document.getElementById("site-top").focus({ preventScroll: true });
     });
 
+    document.querySelectorAll("[data-gallery-target][data-gallery-direction]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const gallery = document.getElementById(button.dataset.galleryTarget);
+            if (!gallery) return;
+            const direction = Number(button.dataset.galleryDirection);
+            const firstShot = gallery.querySelector(".personal-project-shot");
+            const gap = Number.parseFloat(window.getComputedStyle(gallery).columnGap) || 0;
+            const step = firstShot ? firstShot.getBoundingClientRect().width + gap : gallery.clientWidth;
+            gallery.scrollBy({
+                left: direction * step,
+                behavior: reducedMotion.matches ? "auto" : "smooth",
+            });
+        });
+    });
+
     const articleGrid = document.getElementById("articleGrid");
     articleGrid?.addEventListener("error", (event) => {
         const image = event.target;

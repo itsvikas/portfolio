@@ -95,6 +95,23 @@ DATA = {
             "tags": ["BigID", "Automation", "Data Governance"],
         },
     ],
+    "personal_projects_intro": "Independent apps and experiments built around problems I find interesting.",
+    "personal_projects": [
+        {
+            "title": "Smart Notes",
+            "status": "Live & deployed",
+            "summary": "A personal notes app for finding, organizing, and exploring your knowledge from web and mobile.",
+            "details": "Search semantically, chat with your notes, summarize ideas, and keep your notes portable with import and export. It’s live and deployed, with access currently by invitation.",
+            "features": ["Semantic search", "Import & export notes", "Chat with your notes", "Summarize notes", "Automatic tagging", "Web and Mobile app"],
+            "screenshots": [
+                {"file": "img/smart-notes/notes-overview.jpg", "alt": "Smart Notes home screen showing a searchable grid of colorful notes", "caption": "Search and browse your notes"},
+                {"file": "img/smart-notes/ask-your-notes.jpg", "alt": "Smart Notes answering a question with cited notes and follow-up controls", "caption": "Ask questions across your notes"},
+                {"file": "img/smart-notes/insights-and-tags.jpg", "alt": "Smart Notes insights view with note tags and search controls", "caption": "Browse insights and tags"},
+                {"file": "img/smart-notes/import-export.jpg", "alt": "Smart Notes settings for importing, exporting, and rebuilding the search index", "caption": "Import, export, and manage search"},
+                {"file": "img/smart-notes/semantic-search.jpg", "alt": "Smart Notes search results for learning displayed as a list of notes", "caption": "Find notes with semantic search"},
+            ],
+        },
+    ],
     "experience_intro": "8+ years in data engineering, building large-scale pipelines and, more recently, AI-driven data solutions.",
     "employers": [
         {
@@ -154,10 +171,13 @@ DATA = {
         {"icon": "▤", "title": "AI agents", "summary": "LLM workflows that take multi-step actions on real data."},
     ],
     "articles": [
-        {"title": "How to Fine-Tune an LLM", "summary": "A practical introduction to adapting large language models for task-specific needs.", "url": "https://medium.com/@vikaskumar.ran/how-to-fine-tune-an-llm-cf251ca41ad2"},
-        {"title": "Start Your Data Engineering Hands-On Experience with These Free Resources", "summary": "A curated path for building practical data engineering skills with accessible resources.", "url": "https://medium.com/@vikaskumar.ran/start-your-data-engineering-hands-on-experience-with-these-free-resources-which-are-more-than-4f743e611b6f"},
-        {"title": "SQL Window Functions", "summary": "A clear guide to using window functions for expressive analytical SQL.", "url": "https://medium.com/@vikaskumar.ran/sql-window-functions-dc30c8c23480"},
-        {"title": "Delta Lake & Delta Tables: All You Need to Know", "summary": "An overview of Delta Lake concepts and the capabilities of Delta tables.", "url": "https://medium.com/@vikaskumar.ran/delta-lake-delta-table-all-you-need-to-know-2779c2969366"},
+        {"title": "How to fine-tune an LLM", "summary": "A hands-on guide to fine-tuning Gemma with LoRA, from core concepts to a working model.", "url": "https://medium.com/@vikaskumar.ran/how-to-fine-tune-an-llm-cf251ca41ad2", "image": "https://cdn-images-1.medium.com/max/1024/1*lYB15_yFT4MaG124mNfGjg.jpeg", "date": "Jun 20, 2026"},
+        {"title": "Get started with SQL Window Functions", "summary": "An introduction to SQL window functions and how they help calculate values across related rows.", "url": "https://medium.com/@vikaskumar.ran/sql-window-functions-dc30c8c23480", "image": "https://cdn-images-1.medium.com/max/1024/1*aB96kjTFnWK57Bh6ccBNtg.jpeg", "date": "Feb 19, 2023"},
+        {"title": "Get started with Delta Lake & Delta Table", "summary": "An overview of Delta Lake and the features that bring reliability to data lakes.", "url": "https://medium.com/@vikaskumar.ran/delta-lake-delta-table-all-you-need-to-know-2779c2969366", "image": "https://cdn-images-1.medium.com/max/1024/1*2tQfbxoT2ZbeTdKgLphLhA.jpeg", "date": "Mar 19, 2022"},
+        {"title": "Start your Data Engineering hands-on experience with these free resources", "summary": "A curated set of free resources for getting started with data engineering and Spark.", "url": "https://medium.com/@vikaskumar.ran/start-your-data-engineering-hands-on-experience-with-these-free-resources-which-are-more-than-4f743e611b6f", "image": "https://cdn-images-1.medium.com/max/1024/1*1OtV9jVCvZ1TOaV5wpXffw.jpeg", "date": "Feb 19, 2022"},
+        {"title": "Spark: Repartition vs Coalesce, and when to use which", "summary": "A practical comparison of Spark repartition and coalesce, and when to choose each one.", "url": "https://medium.com/@vikaskumar.ran/spark-repartition-vs-coalesce-and-when-to-use-which-3f269b47a5dd", "image": "https://cdn-images-1.medium.com/max/1024/1*4U35r3Zr4dB0yB0_huDYjQ.jpeg", "date": "Feb 13, 2022"},
+        {"title": "How to prepare and take Azure Data Fundamentals certification test, for free?", "summary": "Preparation guidance and free resources for the Azure Data Fundamentals certification exam.", "url": "https://medium.com/@vikaskumar.ran/how-to-prepare-and-take-azure-data-fundamentals-certification-test-for-free-764236b582bb", "image": "https://cdn-images-1.medium.com/max/1024/0*cI-xWH1bemKH7OWc", "date": "Oct 2, 2021"},
+        {"title": "Book Review: The Diary of a Young Girl (Anne Frank’s Diary)", "summary": "A reflection on Anne Frank’s diary and why her story continues to matter.", "url": "https://medium.com/@vikaskumar.ran/why-you-should-read-anne-franks-diary-the-book-the-diary-of-a-young-girl-fd10bbbb64e3", "image": "https://cdn-images-1.medium.com/max/853/1*FifD4wIpMdaSStMLn-WUXQ.jpeg", "date": "Sep 9, 2021"},
     ],
 }
 
